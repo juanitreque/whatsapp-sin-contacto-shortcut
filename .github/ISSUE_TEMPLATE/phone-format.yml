@@ -1,44 +1,45 @@
-name: Formato de teléfono no reconocido
-description: Comunica un formato que no se normaliza correctamente sin publicar datos personales.
-title: "[Formato] "
+name: Unrecognized phone format
+description: Report a format that is not normalized correctly without publishing personal data.
+title: "[Phone format] "
 labels:
   - phone-format
 body:
   - type: dropdown
     id: source
     attributes:
-      label: Origen de la entrada
+      label: Input source
       options:
-        - Texto compartido desde una web
-        - Portapapeles
-        - Contacto
-        - Entrada manual
-        - Otro
+        - Text shared from a website
+        - Clipboard
+        - Contact
+        - Manual input
+        - Other
     validations:
       required: true
   - type: input
     id: country
     attributes:
-      label: País y código internacional
-      placeholder: "Ejemplo: Reino Unido (+44)"
+      label: Country and international calling code
+      placeholder: "Example: United Kingdom (+44)"
     validations:
       required: true
   - type: textarea
     id: format
     attributes:
-      label: Formato anonimizado
-      description: Sustituye varias cifras por X. No publiques un teléfono personal completo.
+      label: Anonymized format
+      description: Replace several digits with X. Do not publish a complete personal phone number.
       placeholder: "+44 (0)20 XXXX XXXX"
     validations:
       required: true
   - type: textarea
     id: result
     attributes:
-      label: Resultado esperado y resultado obtenido
+      label: Expected result and actual result
     validations:
       required: true
   - type: input
     id: system
     attributes:
-      label: Dispositivo y versión del sistema
-      placeholder: "Ejemplo: iPhone, iOS 26"
+      label: Device and operating-system version
+      placeholder: "Example: iPhone, iOS 26"
+
