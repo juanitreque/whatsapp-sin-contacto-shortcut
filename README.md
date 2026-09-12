@@ -1,34 +1,39 @@
-# WhatsApp sin contacto 3.0 beta 4
+# WhatsApp Without Contact 3.0 beta 4
 
-Abre un chat de WhatsApp con un número que no está guardado en Contactos. Funciona desde la hoja de compartir, el portapapeles o una entrada manual y siempre pide confirmación antes de abrir WhatsApp.
+Open a WhatsApp chat with a phone number that is not saved in Contacts. The shortcut accepts input from the Share Sheet, clipboard or manual entry and always asks for confirmation before opening WhatsApp.
 
-## Qué resuelve
+## Install
 
-- Extrae uno o varios teléfonos de texto copiado desde webs, correos o documentos.
-- Normaliza espacios, guiones, puntos y paréntesis.
-- Convierte `00` al formato internacional equivalente.
-- Acepta números españoles sin prefijo y añade `34`.
-- Reconoce códigos internacionales cuando se escriben con `+` o `00`.
-- Convierte dígitos árabes, persas y de ancho completo a cifras ASCII.
-- Elimina extensiones explícitas como `ext. 204`, `extensión 204` o `anexo 204`.
-- Muestra una lista cuando encuentra varios candidatos.
-- Abre `https://wa.me/<número>` usando exclusivamente cifras, tal como requiere WhatsApp.
+**Recommended:** [Add the shortcut from iCloud](https://www.icloud.com/shortcuts/b1428c280f954816be72a4f5d0135c12).
 
-El atajo **no guarda contactos, no envía mensajes y no descarga el contenido de las páginas web**.
+You can also [download the signed `.shortcut` file](https://github.com/juanitreque/whatsapp-sin-contacto-shortcut/raw/refs/heads/main/release/WhatsApp-sin-contacto-3.0-beta-4.shortcut) and open it with Apple Shortcuts.
 
-## Instalación
+The signed build is currently named `WhatsApp sin contacto 3.0 beta 4`.
 
-1. Descarga `WhatsApp-sin-contacto-3.0-beta-4.shortcut` desde la carpeta `release`.
-2. Ábrelo con la app Atajos de Apple.
-3. Revisa sus acciones y pulsa «Añadir atajo».
-4. Desde otra aplicación, selecciona o copia un teléfono y ejecuta «WhatsApp sin contacto 3.0 beta 4».
-5. Comprueba el destinatario antes de elegir «Abrir WhatsApp».
+## What it handles
 
-Apple también permite distribuir un atajo mediante un enlace público de iCloud. Ese enlace se añadirá cuando se publique la versión comunitaria.
+- Extracts one or more phone numbers from text copied from websites, emails or documents.
+- Removes spaces, hyphens, dots and parentheses.
+- Converts an international `00` prefix to its equivalent international format.
+- Accepts Spanish numbers without a country code and adds `34`.
+- Recognizes international country codes written with `+` or `00`.
+- Converts common Arabic, Persian and full-width digits to ASCII digits.
+- Removes explicit extensions such as `ext. 204`, `extension 204` or `annex 204`.
+- Shows a list when it finds several candidates.
+- Opens `https://wa.me/<number>` with digits only, as required by WhatsApp.
 
-## Ejemplos
+The shortcut **does not save contacts, send messages or download webpage content**.
 
-| Entrada | Destinatario normalizado |
+## Use
+
+1. Add the shortcut from iCloud or open the signed file with Apple Shortcuts.
+2. Review its actions and choose **Add Shortcut**.
+3. Select or copy a phone number in another app and run `WhatsApp sin contacto 3.0 beta 4`.
+4. Check the normalized recipient before choosing **Open WhatsApp**.
+
+## Examples
+
+| Input | Normalized recipient |
 |---|---|
 | `+1 (202) 555-0123` | `+12025550123` |
 | `6XX XXX XXX` | `+346XXXXXXXX` |
@@ -38,42 +43,39 @@ Apple también permite distribuir un atajo mediante un enlace público de iCloud
 | `＋１ ２０２ ５５５ ０１２３` | `+12025550123` |
 | `+1 202 555 0123 ext. 204` | `+12025550123` |
 
-## Límites conocidos
+The confirmation screen displays the recipient with a leading `+`. The final `wa.me` URL removes that symbol and contains digits only.
 
-- España es el país predeterminado. Para otros países hay que incluir `+` o `00`.
-- `011 44…` y formatos como `+44 (0)20…` requieren corrección manual porque una conversión automática no sería segura en todos los países.
-- Dos números extranjeros separados únicamente por espacios pueden parecer un solo número. Conviene separarlos con `/`, coma, punto y coma o salto de línea.
-- Una referencia de nueve cifras que empiece por 6, 7, 8 o 9 puede parecer un número español. La confirmación final permite detectarlo antes de abrir WhatsApp.
-- La validación comprueba el formato general del plan de numeración; no confirma que el número exista ni que tenga cuenta de WhatsApp.
+## Known limitations
 
-## Validación
+- Spain is the default country. Numbers from other countries should include `+` or `00`.
+- `011 44…` and formats such as `+44 (0)20…` require manual correction because automatic conversion would not be safe for every country.
+- Two foreign numbers separated only by spaces may look like one number. Separate them with `/`, a comma, a semicolon or a line break.
+- A nine-digit reference beginning with 6, 7, 8 or 9 may look like a Spanish phone number. The final confirmation helps catch it before WhatsApp opens.
+- Validation checks the general numbering-plan format. It cannot confirm that a number exists or has a WhatsApp account.
 
-- 40 casos unitarios ejecutados con el motor de expresiones regulares de Apple.
-- 12 recorridos completos con una copia de diagnóstico sin acción «Abrir URL».
-- Firma, importación, documentación interna y variable del bucle anidado comprobadas en el editor de Atajos.
+## Validation
 
-## Documentación interna
+- 40 parser cases executed with Apple's regular-expression engine.
+- 12 complete routes executed with a diagnostic copy that omits the **Open URL** action.
+- Signature, import, internal documentation and the nested-loop variable checked in the Shortcuts editor.
 
-Las primeras acciones son comentarios que Atajos ignora durante la ejecución. Incluyen ficha y autores, funcionalidades, límites, historial de versiones, privacidad, créditos y licencia. Solo aparecen al abrir el atajo en el editor.
+The anonymized results are available in [`tests/verification-summary.json`](tests/verification-summary.json).
 
-El resumen anonimizado está en `tests/verification-summary.json`.
+## Internal documentation
 
-## Privacidad y seguridad
+The first actions are comments that Apple Shortcuts ignores during execution. They document the project, authors, features, limitations, version history, privacy, credits and licensing. They are only visible when the shortcut is opened in the editor.
 
-Todo el análisis se realiza mediante acciones nativas de Atajos en el dispositivo. La única URL externa que abre la versión normal es `https://wa.me/<número>`, después de que el usuario confirme el destinatario. El número se transmite a WhatsApp cuando se abre esa URL.
+## Privacy and security
 
-## Créditos y licencia
+All parsing runs on the device with native Shortcuts actions. After the user confirms the recipient, the standard build opens only `https://wa.me/<number>`. The phone number is sent to WhatsApp when that URL opens.
 
-Reconstrucción basada en el atajo compartido «Open in WhatsApp», atribuido dentro del original a `@johndoe85`.
+## Credits and licensing
 
-Reconstrucción y mantenimiento de la versión 3.0: [`@juanitreque`](https://github.com/juanitreque).
+This reconstruction is based on the shared shortcut **Open in WhatsApp**, attributed inside the original shortcut to `@johndoe85`.
 
-Las reglas generales de numeración se derivan de `PhoneNumberMetadata.xml` del proyecto Google libphonenumber, distribuido bajo Apache License 2.0. La licencia se conserva en `LICENSES/libphonenumber-Apache-2.0.txt`.
+Version 3.0 was reconstructed and is maintained by [`@juanitreque`](https://github.com/juanitreque).
 
-No se asigna una licencia adicional al atajo original mientras no se confirme la autorización de su autor. Las contribuciones y redistribuciones deben conservar los créditos existentes.
+General numbering rules are derived from `PhoneNumberMetadata.xml` in Google libphonenumber, distributed under the Apache License 2.0. A copy is included at [`LICENSES/libphonenumber-Apache-2.0.txt`](LICENSES/libphonenumber-Apache-2.0.txt).
 
-## English summary
+No additional license is assigned to the inherited shortcut until the original author's permission is confirmed. Contributions and redistributions must preserve the existing credits. See [`COPYRIGHT.md`](COPYRIGHT.md).
 
-This Apple Shortcut opens a WhatsApp chat with a phone number that is not saved in Contacts. It extracts and normalizes numbers from shared text, the clipboard or manual input; supports common international formats and Unicode digits; handles multiple candidates; and always asks for confirmation. It does not save contacts or send messages automatically.
-
-Spain is the default country. Other countries should include `+` or `00`. The final `wa.me` URL contains digits only.

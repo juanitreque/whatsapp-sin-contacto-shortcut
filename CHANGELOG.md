@@ -1,23 +1,24 @@
-# Historial de versiones
+# Changelog
 
 ## 3.0 beta 4 — 2026-09-12
 
-- Añadida documentación interna estructurada con ficha, autores, funcionalidades, límites, historial, privacidad, créditos y licencia.
-- Sin cambios en el motor de normalización validado en beta 3.
+- Added structured internal documentation covering the project, authors, features, limitations, version history, privacy, credits and licensing.
+- Kept the normalization engine validated in beta 3 unchanged.
 
 ## 3.0 beta 3 — 2026-09-11
 
-- Corregida la variable del bucle anidado que impedía procesar algunos números internacionales con formato visual.
-- Añadido soporte para signos de suma y cifras Unicode comunes.
-- Añadida eliminación segura de extensiones explícitas.
-- Añadido aviso para evitar confundir referencias numéricas con teléfonos.
-- Confirmado que la URL de WhatsApp contiene exclusivamente cifras.
-- Ampliada la batería a 40 casos unitarios y 12 recorridos completos.
+- Fixed the nested-loop variable that prevented some visually formatted international numbers from being processed.
+- Added support for common Unicode plus signs and digits.
+- Added safe removal of explicit phone extensions.
+- Added a warning to reduce confusion between numeric references and phone numbers.
+- Confirmed that the WhatsApp URL contains digits only.
+- Expanded validation to 40 parser cases and 12 complete routes.
 
 ## 3.0 beta 2 — 2026-09-11
 
-- Primera corrección del flujo completo y de la referencia al elemento del bucle.
+- First correction of the complete flow and loop-item reference.
 
 ## 3.0 beta 1 — 2026-09-11
 
-- Reconstrucción inicial con extracción múltiple, normalización y validación internacional.
+- Initial reconstruction with multiple-number extraction, normalization and international validation.
+

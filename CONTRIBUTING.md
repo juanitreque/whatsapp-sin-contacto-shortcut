@@ -1,19 +1,20 @@
-# Cómo contribuir
+# Contributing
 
-Gracias por ayudar a probar WhatsApp sin contacto.
+Thank you for helping test WhatsApp Without Contact.
 
-## Informar de un número que falla
+## Report a failing phone format
 
-Abre una incidencia e indica:
+Open an issue and include:
 
-- País y código internacional.
-- Formato aproximado de la entrada, sustituyendo varias cifras por `X` si el número pertenece a una persona real.
-- Origen del texto: web, correo, documento, portapapeles, Contactos o entrada manual.
-- Resultado esperado y resultado obtenido.
-- Dispositivo y versión de iOS, iPadOS o macOS.
+- Country and international calling code.
+- An approximate input format, replacing several digits with `X` if the number belongs to a real person.
+- Where the text came from: website, email, document, clipboard, Contacts or manual input.
+- Expected result and actual result.
+- Device and iOS, iPadOS or macOS version.
 
-No publiques teléfonos personales completos, datos de contactos ni capturas que los contengan.
+Do not publish complete personal phone numbers, contact details or screenshots that contain them.
 
-## Criterio de seguridad
+## Safety criterion
 
-Las normalizaciones nuevas deben ser inequívocas para todos los países afectados. Los formatos ambiguos deben pedir revisión manual. El atajo debe seguir mostrando el destinatario antes de abrir WhatsApp y nunca debe enviar mensajes automáticamente.
+New normalization rules must be unambiguous for every affected country. Ambiguous formats should require manual review. The shortcut must continue to show the recipient before opening WhatsApp and must never send a message automatically.
+
