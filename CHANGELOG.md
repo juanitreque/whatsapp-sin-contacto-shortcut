@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.0 beta 5 — 2026-09-12
+
+- Added a searchable first-run menu with 245 country and territory entries.
+- Saved the selected default country in the Shortcuts folder in iCloud Drive and reused it silently on later runs.
+- Applied the selected calling code to national numbers instead of always assuming Spain.
+- Added conservative handling for national trunk prefixes while preserving significant leading zeroes such as Italian fixed-line numbers.
+- Added inference for complete digit-only international numbers when the default-country interpretation is invalid.
+- Expanded validation with 22 normalization cases, all 245 country entries and two live configuration runs.
+
 ## 3.0 beta 4 — 2026-09-12
 
 - Added structured internal documentation covering the project, authors, features, limitations, version history, privacy, credits and licensing.
@@ -21,4 +30,3 @@
 ## 3.0 beta 1 — 2026-09-11
 
 - Initial reconstruction with multiple-number extraction, normalization and international validation.
-

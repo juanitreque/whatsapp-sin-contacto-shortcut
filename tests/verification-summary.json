@@ -1,26 +1,41 @@
 {
-  "version": "3.0 beta 4; normalization engine unchanged from validated beta 3",
-  "unit_tests": {
-    "total": 40,
-    "passed": 40
+  "version": "3.0 beta 5",
+  "build": {
+    "signed": true,
+    "bytes": 49647,
+    "sha256": "5bcbb35525c08e878674e1e13a40eddd1e1f2ca8aad8b0d5c51859f4b260f342",
+    "actions": 139,
+    "open_url_actions": 1
   },
-  "end_to_end_validation": {
-    "total": 12,
-    "passed": 12,
-    "safety": "The diagnostic copy contained no Open URL action and could not open WhatsApp."
+  "normalization_tests": {
+    "total": 22,
+    "passed": 22,
+    "engine": "Apple NSRegularExpression with the exact patterns and algorithm embedded in beta 5"
+  },
+  "country_catalog": {
+    "entries": 245,
+    "validated": 245,
+    "distinct_calling_codes": 215,
+    "spain_is_first": true
   },
   "covered_cases": [
+    "national numbers for Spain, the United States, the United Kingdom, France, Germany, Italy, Russia, Mexico, Australia and Japan",
     "North American number with spaces, parentheses and hyphen",
-    "international 00 prefix",
-    "multiple Spanish candidates",
-    "Arabic-Indic digits",
-    "Eastern Arabic-Indic digits",
-    "full-width digits and plus sign",
-    "explicit abbreviated extension",
-    "explicit written extension",
-    "ambiguous 011 prefix rejected for manual review",
-    "ambiguous trunk zero after country code rejected for manual review",
+    "international + and 00 prefixes",
+    "complete digit-only international number",
+    "wa.me URL copied from a website",
+    "Arabic-Indic and full-width digits",
+    "explicit phone extension",
+    "multiple Spanish candidates separated only by spaces",
+    "multiple international candidates with an explicit separator",
     "unknown country calling code rejected",
-    "numeric reference requires final human confirmation"
-  ]
+    "date ignored",
+    "phone number embedded in website text"
+  ],
+  "live_configuration_check": {
+    "first_run_saved": "Spain (+34)",
+    "second_run_showed_country_selector": false,
+    "second_run_rewrote_preference_file": false
+  },
+  "safety_boundary": "The signed shortcut was imported and inspected, but the final Open WhatsApp action was not selected and no real recipient chat was opened."
 }
