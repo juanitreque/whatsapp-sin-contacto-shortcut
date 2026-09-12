@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/juanitreque-banner.jpg" alt="juanitreque" width="100%">
+</p>
+
 # WhatsApp Without Contact 3.0 beta 5
 
 Open a WhatsApp chat with a phone number that is not saved in Contacts. The shortcut accepts input from the Share Sheet, clipboard or manual entry and always asks for confirmation before opening WhatsApp.
