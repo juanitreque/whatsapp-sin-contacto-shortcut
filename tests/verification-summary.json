@@ -1,0 +1,26 @@
+{
+  "version": "3.0 beta 4; normalization engine unchanged from validated beta 3",
+  "unit_tests": {
+    "total": 40,
+    "passed": 40
+  },
+  "end_to_end_validation": {
+    "total": 12,
+    "passed": 12,
+    "safety": "The diagnostic copy contained no Open URL action and could not open WhatsApp."
+  },
+  "covered_cases": [
+    "North American number with spaces, parentheses and hyphen",
+    "international 00 prefix",
+    "multiple Spanish candidates",
+    "Arabic-Indic digits",
+    "Eastern Arabic-Indic digits",
+    "full-width digits and plus sign",
+    "explicit abbreviated extension",
+    "explicit written extension",
+    "ambiguous 011 prefix rejected for manual review",
+    "ambiguous trunk zero after country code rejected for manual review",
+    "unknown country calling code rejected",
+    "numeric reference requires final human confirmation"
+  ]
+}
